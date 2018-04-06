@@ -19,7 +19,7 @@ and open the template in the editor.
             <div class="row">
                 <div class="col s3">
                     <h4>Sign in</h4>
-                    <form method="POST" action="http://localhost:8084/WebApp1/IndexServlet">
+                    <form id="auth" method="POST" action="http://localhost:8084/WebApp1/IndexServlet">
                         <label for="login">login: </label>
                         <input id="login" type="text" name="login" placeholder="login">
                         <label for="password">password: </label>
@@ -28,6 +28,12 @@ and open the template in the editor.
                             <i class="material-icons right">send</i>
                         </button>
                     </form>
+                </div>
+                <div id="resp" class="col s3">
+                    <!--v1 - jQuery only-->
+<!--                    <h4>Response:</h4>
+                    <div id="login-resp"></div>
+                    <div id="password-resp"></div>-->
                 </div>
             </div>
         </div>
@@ -62,7 +68,10 @@ and open the template in the editor.
             
             setTimeout(sendPostCallback, 2000);*/
         </script>
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/hogan-3.0.2.min.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
     </body>
 </html>
