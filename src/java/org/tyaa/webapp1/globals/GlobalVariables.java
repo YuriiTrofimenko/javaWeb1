@@ -3,27 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.tyaa.webapp1.model;
+package org.tyaa.webapp1.globals;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.tyaa.webapp1.entity.News;
 
 /**
  *
  * @author student
  */
-public class Result {
+public class GlobalVariables {
     
-    private List data = new ArrayList();
-    private String error = "";
-    
-    public Result(List _data){
-    
-        data.addAll(_data);
-    }
-    
-    public Result(String _error){
-    
-        error = _error;
-    }
+    public static List<News> news = new ArrayList<News>();
 }
