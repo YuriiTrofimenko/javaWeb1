@@ -100,6 +100,8 @@ $(document).ready(function (){
     });
     
     function populateTable(){
+
+        $('#table-container').html("<div class='progress'><div class='indeterminate'></div></div>");
         
         $.ajax({
             url: "http://localhost:8084/WebApp1/NewsServlet",
@@ -110,7 +112,28 @@ $(document).ready(function (){
             cache : false
         }).done(function(resp) {
             
-            console.log(resp);
+            var template = Hogan.compile(
+                '<table class="table">'
+                +  '<thead>'
+                +    '<tr>'
+                +      '<th>ID</th>'
+                +       '<th>заголовок</th>'
+                +       '<th>контент</th>'
+                +    '</tr>'
+                +  '</thead>'
+                +  '<tbody>'
+                +  '{{#data}}'
+                + 	'<tr>'
+                +           '<th scope="row">{{id}}</th>'
+                +           '<td>{{title}}</td>'
+                +           '<td>{{content}}</td>'
+                +        '</tr>'
+                +    '{{/data}}'
+                +    '</tbody>'
+                + '</table>'
+            );
+            //Заполняем шаблон данными и помещаем на веб-страницу
+            $('#table-container').html(template.render(resp));
             
         });
     }

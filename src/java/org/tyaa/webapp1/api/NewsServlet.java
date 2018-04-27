@@ -9,6 +9,8 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -64,6 +66,12 @@ public class NewsServlet extends HttpServlet {
                         break;
                     }
                     case "fetch-all-news" : {
+                        
+                        /*try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(NewsServlet.class.getName()).log(Level.SEVERE, null, ex);
+                        }*/
                         
                         Result result = new Result(GlobalVariables.news);
                         String resultJsonString = gson.toJson(result);
